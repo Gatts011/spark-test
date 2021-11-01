@@ -16,8 +16,8 @@ const Home: NextPage = () => {
 
 
         <div id="content" className={styles.main}>
-          <h1>Hello and welcome</h1>
-          <p className={styles.paragraph}>This is the start of your new journey</p>
+          <div className={styles.header}>Hello and welcome</div>
+          <div className={styles.paragraph}>This is the start of your new journey</div>
         </div>
 
         <div id="content2" className={styles.main2}>
@@ -31,6 +31,11 @@ const Home: NextPage = () => {
 
         <div className={styles.twin}>
         </div>
+
+        <svg className={styles.svg}>
+          <rect x="50" y="20" rx="3" width="90" height="6"
+            className={styles.rect} />
+        </svg>
       </div>
 
 

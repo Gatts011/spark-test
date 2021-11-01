@@ -8,6 +8,18 @@ General styles
   background: #cecece;
   min-height: 100vh;
 }
+.header {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1em;
+  padding: 0 0 30px;
+}
+
+.paragraph {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1em;
+}
 
 .button {
   background-color: #2185c5;
@@ -32,6 +44,24 @@ General styles
   background: #ffffff;
 }
 
+.svg {
+  position: absolute;
+  left: 210px;
+  top: 315px;
+}
+
+/* kill it any less than this */
+@media screen and (max-width: 1365px) {
+  .svg{
+    display: none;
+  }
+}
+
+.rect {
+  fill: #2185c5;
+  transform: rotate(-5.71deg);
+}
+
 /*--------------------------------------------------------------
 If no grid support, limit width to 50em and center align
 --------------------------------------------------------------*/
@@ -45,6 +75,8 @@ If no grid support, limit width to 50em and center align
 /*--------------------------------------------------------------
 CSS Grid layout for wider screens, when browser supports grid:
 --------------------------------------------------------------*/
+
+
 
 /* Desktop */
 
@@ -93,10 +125,15 @@ CSS Grid layout for wider screens, when browser supports grid:
   @supports (display: grid) {
     .site {
       display: grid;
-      grid-template-columns: 24px auto 674px 24px;
+      grid-template-columns: 24px auto 435px 24px;
       grid-template-rows: 24px 300px 200px 400px 24px;
       font-size: 16px;
       width: fit-content;
+    }
+
+    .header {
+      font-size: 64px;
+      font-weight: 700;
     }
 
     .main {
@@ -125,7 +162,7 @@ CSS Grid layout for wider screens, when browser supports grid:
     .twin {
       grid-column: 2/4;
       grid-row: 4/5;
-    }
+    }        
   }
 }
 
@@ -139,11 +176,19 @@ CSS Grid layout for wider screens, when browser supports grid:
       grid-template-rows: 16px 300px auto 200px 16px;
     }
 
+    .header {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1em;
+      padding: 0 0 30px;
+    }
+
     .main {
       grid-column: 2/3;
       grid-row: 2/3;
       text-align: center;
-      padding: 2em 7em 0 7em;
+      padding: 2em 10em 0 10em;
+      justify-content: center;
     }
     .main2 {
       grid-column: 2/3;
@@ -156,6 +201,9 @@ CSS Grid layout for wider screens, when browser supports grid:
 
     .paragraph {
       padding: 0 1em 0 1em;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
     }
 
     .sidebar {
