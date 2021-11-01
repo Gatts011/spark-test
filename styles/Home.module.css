@@ -1,0 +1,176 @@
+/*--------------------------------------------------------------
+General styles
+--------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.site {
+  font-family: "Poppins";
+  background: #cecece;
+  min-height: 100vh;
+}
+
+.button {
+  background-color: #2185c5;
+  border: none;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 2em;
+  margin-top: 2em;
+}
+
+.main,
+.main2,
+.sidebar {
+  background: #e4f0fc;
+}
+.twin {
+  background: #ffffff;
+}
+
+/*--------------------------------------------------------------
+If no grid support, limit width to 50em and center align
+--------------------------------------------------------------*/
+@supports not (display: grid) {
+  .site {
+    max-width: 50em;
+    margin: 0 auto;
+  }
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for wider screens, when browser supports grid:
+--------------------------------------------------------------*/
+
+/* Desktop */
+
+@media screen and (min-width: 1024px) {
+  @supports (display: grid) {
+    .site {
+      display: grid;
+      grid-template-columns: 24px auto 674px 24px;
+      grid-template-rows: 24px 300px 230px auto 24px;
+      font-size: 16px;
+    }
+
+    .main {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-left: 5em;
+    }
+    .main2 {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      padding-left: 5em;
+    }
+
+    .sidebar {
+      grid-column: 3/4;
+      grid-row: 2/4;
+      background-image: url("../public/desktop.JPG");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .twin {
+      grid-column: 2/4;
+      grid-row: 4/5;
+    }
+  }
+}
+
+/* tablet */
+
+@media screen and (max-width: 1023px) {
+  @supports (display: grid) {
+    .site {
+      display: grid;
+      grid-template-columns: 24px auto 674px 24px;
+      grid-template-rows: 24px 300px 200px 400px 24px;
+      font-size: 16px;
+      width: fit-content;
+    }
+
+    .main {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-left: 5em;
+    }
+    .main2 {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      padding-left: 5em;
+    }
+
+    .sidebar {
+      grid-column: 3/4;
+      grid-row: 2/4;
+      background-image: url("../public/tablet.JPG");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .twin {
+      grid-column: 2/4;
+      grid-row: 4/5;
+    }
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 600px) {
+  @supports (display: grid) {
+    .site {
+      display: grid;
+      grid-template-columns: 16px auto 16px;
+      grid-template-rows: 16px 300px auto 200px 16px;
+    }
+
+    .main {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      text-align: center;
+      padding: 2em 7em 0 7em;
+    }
+    .main2 {
+      grid-column: 2/3;
+      grid-row: 4/5;
+      text-align: center;
+      background-color: white;
+      padding-top: 3em;
+      padding-left: 0;
+    }
+
+    .paragraph {
+      padding: 0 1em 0 1em;
+    }
+
+    .sidebar {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      background-image: url("../public/mobile.JPG");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .twin {
+      grid-column: 2/4;
+      grid-row: 5/6;
+      visibility: hidden;
+    }
+  }
+}
